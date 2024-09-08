@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Image Analysis</h1>
+        </div>
+        <div class="image-wrapper">
+            <img class="image" src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" />
+        </div>
+        <div class="result-section {{ result_class }}">
+            <div class="prediction-info">
+                <div class="prediction">Prediction Result</div>
+                <div class="status">{{ prediction }}</div>
+            </div>
+            <div class="accuracy">Accuracy: {{ accuracy_value }}%</div>
+        </div>
+        <div class="button-group">
+            {% if prediction == 'Positive' %}
+                <a class="medical-help-button" href="/medical-help">Medical Help</a>
+            {% else %}
+                <a class="precaution-button" href="/precautions">Precaution</a>
+            {% endif %}
+            <a class="upload-button" href="/">Upload another image</a>
+        </div>
+    </div>
+</body>
+</html>

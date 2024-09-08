@@ -1,0 +1,198 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F5FD;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fefaf3;
+    box-shadow: 0 4px 8px #f0c36d;
+    text-align: center; /* Center align text */
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Section */
+.result-section {
+    padding: 20px;
+    border-radius: 10px;
+    color: #333; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    border: none;
+}
+
+.positive {
+    color: #FF0000;
+}
+
+.negative {
+    color: #00FF00;
+}
+
+.prediction-info {
+    margin-bottom: 10px;
+}
+
+.prediction {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.status {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.threshold {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.upload-button,
+.medical-help-button,
+.precaution-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.upload-button {
+    background-color: #007BFF; /* Blue for upload */
+}
+
+.medical-help-button {
+    background-color: #dc3545; /* Red for medical help */
+}
+
+.precaution-button {
+    background-color: #17a2b8; /* Teal for precaution */
+}
+
+/* Button Hover Effects */
+.upload-button:hover,
+.medical-help-button:hover,
+.precaution-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+    transform: translateY(-5px); /* Lifts the button */
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.medical-help-button:hover {
+    background-color: #c82333;
+}
+
+.precaution-button:hover {
+    background-color: #138496;
+}
+
+/* Button Active State */
+.upload-button:active,
+.medical-help-button:active,
+.precaution-button:active {
+    transform: translateY(2px);
+    background-color: #004080; /* Darker shade for active state */
+}
+
+/* Button Focus State */
+.upload-button:focus,
+.medical-help-button:focus,
+.precaution-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Outline effect for accessibility */
+}
+
+/* Link Styles */
+.report-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #28a745;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.report-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #28a745;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.report-link:hover {
+    color: #218838;
+}
+
+.report-link:hover::after {
+    width: 100%;
+    left: 0;
+}

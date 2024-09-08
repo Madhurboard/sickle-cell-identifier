@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sickle Cell Identifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Optional: Add styles for hidden file input */
+        #fileInput {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-section">
+            <h1>Sickle Cell Identification</h1>
+            <p>This is a prototype version.</p>
+            <button id="uploadButton" class="upload-btn">Upload & Identify</button>
+        </div>
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput" accept="image/*" required>
+        </form>
+        <div class="upload-section">
+            <div class="upload-box">
+                <div class="upload-icon">
+                    <p>Drag and Drop Image</p>
+                    <a href="#">Batch Upload</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    
+        document.getElementById('fileInput').addEventListener('change', function() {
+            document.getElementById('uploadForm').submit();
+        });
+    
+        const uploadSection = document.querySelector('.upload-section');
+        const fileInput = document.getElementById('fileInput');
+        const uploadForm = document.getElementById('uploadForm');
+    
+        uploadSection.addEventListener('dragover', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadSection.classList.add('dragover'); // Add class to expand box
+        });
+    
+        uploadSection.addEventListener('dragleave', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadSection.classList.remove('dragover'); // Remove class to revert box
+        });
+    
+        uploadSection.addEventListener('drop', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadSection.classList.remove('dragover'); // Remove class to revert box
+    
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                uploadForm.submit(); // Automatically submit the form
+            }
+        });
+    </script>
+    
+</body>
+</html>
