@@ -74,6 +74,15 @@ def upload_image():
         return render_template('result.html', filename=filename, prediction=prediction, result_class=result_class)
     
     return redirect('/')
+@app.route('/precaution')
+def precaution():
+    return render_template('precaution.html')
+
+@app.route('/medical-help')
+def medical_help():
+    # Render the medical help page
+    return render_template('medical-help.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

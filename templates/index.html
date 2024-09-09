@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Optional: Add styles for hidden file input */
         #fileInput {
             display: none;
         }
@@ -49,24 +48,24 @@
         uploadSection.addEventListener('dragover', function(event) {
             event.preventDefault();
             event.stopPropagation();
-            uploadSection.classList.add('dragover'); // Add class to expand box
+            uploadSection.classList.add('dragover'); 
         });
     
         uploadSection.addEventListener('dragleave', function(event) {
             event.preventDefault();
             event.stopPropagation();
-            uploadSection.classList.remove('dragover'); // Remove class to revert box
+            uploadSection.classList.remove('dragover'); 
         });
     
         uploadSection.addEventListener('drop', function(event) {
             event.preventDefault();
             event.stopPropagation();
-            uploadSection.classList.remove('dragover'); // Remove class to revert box
+            uploadSection.classList.remove('dragover'); 
     
             const files = event.dataTransfer.files;
             if (files.length > 0) {
                 fileInput.files = files;
-                uploadForm.submit(); // Automatically submit the form
+                uploadForm.submit(); 
             }
         });
     </script>
